@@ -14,3 +14,5 @@ Snowcrash is a virtual machine from 42 School that goes through a variety of com
 * Binary compilation failures
 
 At the end, you will have a reasonably thorough understanding of local attacks against Linux systems, and a cursory look at some of the remote attacks that are possible.
+
+There is one readme per level, it is formulated as a diviner to help you.
