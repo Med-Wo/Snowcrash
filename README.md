@@ -19,6 +19,8 @@ There is one readme per level, it is formulated as a diviner to help you.
 
 ## Sources
 
+[Privilege Escalation Linux](https://book.hacktricks.xyz/linux-hardening/privilege-escalation)
+
 [Linux permissions: SUID, SGID, and sticky bit](https://www.redhat.com/sysadmin/suid-sgid-sticky-bit#:~:text=user%20%2B%20s%20(pecial),use%20an%20uppercase%20S%20here.)
 
 [Éviter les failles de sécurité dès le développement d'une application](http://www.linuxfocus.org/Francais/January2001/article182.shtml)
