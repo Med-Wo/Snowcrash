@@ -1,0 +1,1 @@
+Use the effective permission right of another
