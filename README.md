@@ -16,3 +16,9 @@ Snowcrash is a virtual machine from 42 School that goes through a variety of com
 At the end, you will have a reasonably thorough understanding of local attacks against Linux systems, and a cursory look at some of the remote attacks that are possible.
 
 There is one readme per level, it is formulated as a diviner to help you.
+
+## Sources
+
+[Linux permissions: SUID, SGID, and sticky bit](https://www.redhat.com/sysadmin/suid-sgid-sticky-bit#:~:text=user%20%2B%20s%20(pecial),use%20an%20uppercase%20S%20here.)
+
+[Éviter les failles de sécurité dès le développement d'une application](http://www.linuxfocus.org/Francais/January2001/article182.shtml)
