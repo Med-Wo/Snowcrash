@@ -26,3 +26,7 @@ There is one readme per level, it is formulated as a diviner to help you.
 [Éviter les failles de sécurité dès le développement d'une application (FR)](http://www.linuxfocus.org/Francais/January2001/article182.shtml)
 
 [PCRE Modifier (EN)](https://www.space.net/~chd/php/reference.pcre.pattern.modifiers.html#reference.pcre.pattern.modifiers.eval)
+
+[Time-of-check to time-of-use](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use)
+
+[Lua Web Application Security Vulnerabilities](https://seclists.org/fulldisclosure/2014/May/128)
