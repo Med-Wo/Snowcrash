@@ -3,7 +3,7 @@
 
 This project is an introduction to computer security. Snow Crash will make you discover security in various sub-domains, with a developer-oriented approach.
 
-Snowcrash is a virtual machine from 42 School that goes through a variety of common (and less than common) weaknesses and vulnerabilities in Linux.
+Snowcrash is a virtual machine from [42 School](https://42.fr/en/homepage/) that goes through a variety of common (and less than common) weaknesses and vulnerabilities in Linux.
 
 * SUID files
 * Permissions
