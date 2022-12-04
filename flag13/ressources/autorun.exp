@@ -1,0 +1,39 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set level [ lindex $argv 2 ]
+set password [ exec cat "../../flag12/flag" ]
+
+spawn ssh "$level\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "ls -aRl\r"
+	send "ltrace ./level13\r"
+	send "gdb level13\r"
+
+expect "(gdb)"
+	send "disas main\r"
+	send "return\r"
+	send "b *0x0804859a\r"
+	send "run\r"
+	send "set \$eax=0x1092\r"
+	send "next\r"
+	send "q\r"
+
+	expect "(y or n)"
+		send "y\r"
+
+expect -re {\$ $}	
+	send "su level14\r"
+
+set flag [ exec cat ../flag ]
+
+expect "Password:" { send "$flag\r" }
+
+expect -re {\$ $}
+	send "id\r"
+	send "exit\r"
+	send "exit\r"
