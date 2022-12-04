@@ -30,3 +30,11 @@ There is one readme per level, it is formulated as a diviner to help you.
 [Time-of-check to time-of-use](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use)
 
 [Lua Web Application Security Vulnerabilities](https://seclists.org/fulldisclosure/2014/May/128)
+
+[The Hacker Recipes](https://www.thehacker.recipes/)
+
+[Null-byte injection](https://www.thehacker.recipes/web/inputs/null-byte-injection)
+
+[Man nc traditional](https://www.commandlinux.com/man-page/man1/nc.traditional.1.html)
+
+[Documentation GDB](https://sourceware.org/gdb/current/onlinedocs/gdb/)
