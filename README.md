@@ -27,14 +27,20 @@ There is one readme per level, it is formulated as a diviner to help you.
 
 [PCRE Modifier (EN)](https://www.space.net/~chd/php/reference.pcre.pattern.modifiers.html#reference.pcre.pattern.modifiers.eval)
 
-[Time-of-check to time-of-use](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use)
+[Time-of-check to time-of-use (EN)](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use)
 
-[Lua Web Application Security Vulnerabilities](https://seclists.org/fulldisclosure/2014/May/128)
+[Lua Web Application Security Vulnerabilities (EN)](https://seclists.org/fulldisclosure/2014/May/128)
 
-[The Hacker Recipes](https://www.thehacker.recipes/)
+[The Hacker Recipes (EN)](https://www.thehacker.recipes/)
 
-[Null-byte injection](https://www.thehacker.recipes/web/inputs/null-byte-injection)
+[Man nc traditional (EN)](https://www.commandlinux.com/man-page/man1/nc.traditional.1.html)
 
-[Man nc traditional](https://www.commandlinux.com/man-page/man1/nc.traditional.1.html)
+[Documentation GDB (EN)](https://sourceware.org/gdb/current/onlinedocs/gdb/)
 
-[Documentation GDB](https://sourceware.org/gdb/current/onlinedocs/gdb/)
+[Reverse Engineering For Everyone (EN)](https://0xinfection.github.io/reversing/)
+
+[GDB Cheat Sheet (EN)](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
+
+[Base Hacking (FR)](https://bases-hacking.org/)
+
+[Bypass ptrace](https://gist.github.com/poxyran/71a993d292eee10e95b4ff87066ea8f2#file-easy-bypass-for-ptrace-ptrace_traceme-0-0-in-gdb)
