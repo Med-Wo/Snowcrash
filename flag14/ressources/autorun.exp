@@ -1,0 +1,47 @@
+#!/usr/bin/expect
+
+set ip [ lindex $argv 0 ]
+set port [ lindex $argv 1 ]
+set level [ lindex $argv 2 ]
+set password [ exec cat "../../flag13/flag" ]
+
+spawn ssh "$level\@$ip" "-p $port"
+
+expect "password:" { send "$password\r" }
+
+expect -re {\$ $}
+	send "cat /etc/passwd | grep flag14\r"
+	send "gdb -q /bin/getflag\r"
+	
+expect "(gdb)"
+	send "run\r"
+	send "disas main\r"
+	send "return\r"
+	send "return\r"
+	send "q\r"
+	send "catch syscall ptrace\r"
+	send "commands 1\r"
+
+expect ">"
+	send "set (\$eax) = 0\r"
+	send "continue\r"
+	send "end\r"
+
+expect "(gdb)"
+	send "b *main+444\r"
+	send "run\r"
+	send "set \$eax=3014\r"
+	send "continue\r"
+	send "quit\r"
+
+expect -re {\$ $}
+	send "su flag14\r"
+
+set flagpwd [exec cat "flagpwd"]
+
+expect "Password:" { send "$flagpwd\r" }
+	
+expect -re {\$ $}
+	send "id\r"
+	send "exit\r"
+	send "exit\r"
